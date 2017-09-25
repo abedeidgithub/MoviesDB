@@ -1,0 +1,174 @@
+body
+{
+	margin:0;
+	padding:0;
+	
+}
+/* start my logo*/
+.navbar
+{
+	margin-bottom:0px;
+}
+.navbar-default 
+{
+   background-color: #000;
+    border-color: #000;
+}
+
+.container-fluid > .navbar-header
+{
+	height:80px ;
+	background-color: #000;
+}
+.myposter
+{
+	padding-top:10px;
+	background-color:#2693e3;
+}
+/*poster*/
+.img
+{
+	padding-top:5px;
+	float:left;
+	width:300px;
+	height:500px;
+}
+.post
+{
+	width:300px;
+	height:500px;
+}
+.img-thumbnail
+{
+	background:rgba(3,3,3,0.6);
+}
+/*details*/
+.info
+{
+	color:#1e1212;
+	width:1000px;
+	padding-left:70px;
+	font-size:12pt;
+	float:left;
+}
+h1
+{
+	color:#8d1313;
+	top:10px
+}
+.lab
+{
+	font-size:15pt;
+	font-style:italic;
+	color:#c27c13;
+	padding:2px;
+}
+.par
+{
+	font-size:12pt;
+	color:#1e1212;
+}
+/*book*/
+.alt
+{
+	margin:50px;
+		padding-top:30px;
+}
+.aa
+{
+	width:58px;
+	height:48px;
+	
+}
+.row
+{
+	padding-top:100px;
+	margin:auto;
+	padding-left: 60px;
+}
+.cont
+{
+	margin:auto;
+width: 450px;
+border-radius: 30%;
+background:rgba(3,3,3,0.5);
+height:750px;
+}
+.detail
+{
+	height:800px;
+	
+}
+.form-control {
+    color: #000;
+    background-color: #eddede;
+	font-size:15pt;
+	padding-left:10px;
+	width:250px;
+	left:20px;
+
+}
+
+.btn-primary
+{
+	width:100px;
+	padding-left:10px;
+	padding-top:10px
+}
+.button
+{
+	width:100px;
+	padding-left:70px;
+	padding-top:20px
+}
+@media (max-width: 480px) { 
+	.alt
+{
+	margin:0px;
+		padding-top:20px;
+}
+.aa
+{
+	width:40px;
+	height:30px;
+	
+}
+.row
+{
+	padding-top:50px;
+	margin:auto;
+	
+}
+.cont
+{
+	margin:auto;
+width: 260px;
+border-radius: 30%;
+background:rgba(3,3,3,0.5);
+height:450px;
+}
+.detail
+{
+	height:100px;
+	
+}
+.form-control {
+    color: #000;
+    background-color: #eddede;
+	font-size:15pt;
+	width:150px;
+	padding-left:0px;
+	
+	
+}
+.form-control
+{
+	left:1px;
+}
+
+#myButton
+{
+	width:100px;
+	padding-left:10px;
+}
+}

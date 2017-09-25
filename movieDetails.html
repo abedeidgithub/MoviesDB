@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="project">
+
+   <head ng-controller="movieDetailsCtr">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{res.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>	   <link rel="stylesheet" href="Content/bootstrap.css">
+	   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	   <link href="css/main.css" rel="stylesheet">
+
+  </head>
+  <body ng-controller="movieDetailsCtr">
+
+
+  <div id="wrapper">
+
+	  <div class="nav-wrapper">
+		  <div class="container">
+
+			  <nav class="navbar navbar-default navbar-inverse" role="navigation">
+				  <div class="container-fluid">
+					  <!-- Brand and toggle get grouped for better mobile display -->
+					  <div class="navbar-header">
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							  <span class="sr-only">Toggle navigation</span>
+							  <span class="icon-bar"></span>
+							  <span class="icon-bar"></span>
+							  <span class="icon-bar"></span>
+						  </button>
+						  <div class="navbar-brand" style="font-size: 25px;color: #ffffff;font-family:' cursive" >  Scoop Themes  </div>
+					  </div>
+
+					  <!-- Collect the nav links, forms, and other content for toggling -->
+					  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						  <ul class="nav navbar-nav">
+							  <li ><a href="popular.html" style="font-weight: bold;color: #ffffff;font-family:'cursive">Popular &nbsp;</a></li>
+							  <li><a href="top_rated.html"  style="font-weight: bold;color: #ffffff;font-family:' cursive">Top Rated&nbsp;</a></li>
+
+
+						  </ul>
+						  <ul class="nav navbar-nav navbar-right" style="padding-top: 12px;">
+							  <li>
+								  <form action="search.html" class="search-form">
+									  <div class="form-group has-feedback">
+										  <label for="search" class="sr-only">Search</label>
+										  <input type="text" class="form-control" name="search" id="search" placeholder="search" ng-click="serch()" >
+										  <span class="form-control-feedback"></span>
+									  </div>
+								  </form>
+
+
+
+							  </li>
+						  </ul>
+					  </div><!-- /.navbar-collapse -->
+				  </div><!-- /.container-fluid -->
+			  </nav>
+
+		  </div>
+ 	  </div>
+<div class="container" style="padding-top: 100px;">
+	<div class="col-md-4">
+		<a href="#" class="thumbnail" ng-controller="movieDetailsCtr" >
+			<img class="img-responsive" src="https:image.tmdb.org/t/p/w320/{{res.poster_path}} " alt="">
+		</a>
+
+
+	</div>
+
+	<div class="col-md-8">
+		<div  >
+			<h1>{{res.title}} <small><sup>{{res.release_date.substring(0, 4);}}</sup>	</small></h1>
+			<h3>{{res.vote_average}}<sup><img src="star.png"></sup></h3>
+			<h5>{{res.overview}}</h5>
+			<div ng-controller="movieTailerCtr">
+
+			<a href=" https://www.youtube.com/embed/{{res[0].key}}"> <img src="images/youyube.png" width="100" height="100">	 </a>
+			</div>
+
+
+
+			<!-- -->
+
+
+			<div class="seatSelection col-lg-12">
+				<p class="seatSection">
+					Your first
+					<span class="freeSeats">2</span> seats selected will be Free.<br /> You can add more seats and proceed to check out.
+				</p>
+				<div class="seatsChart col-lg-6">
+					<div class="seatRow">
+						<div class="seatRowNumber">
+							Row 1
+						</div>
+						<button  id="1_1" onclick="fun1_1()" class="seatNumber ">1</button>
+						<button id="1_2"  onclick="fun1_2()"class="seatNumber ">2</button>
+						<button id="1_3"  onclick="fun1_3()"class="seatNumber ">3</button>
+						<button id="1_4"  onclick="fun1_4()"class="seatNumber ">4</button>
+
+
+					</div>
+					<div class="seatRow">
+						<div class="seatRowNumber">
+							Row 2
+						</div>
+						<button id="2_1"  onclick="fun2_1()"class="seatNumber ">1</button>
+						<button id="2_2"  onclick="fun2_2()"class="seatNumber ">2</button>
+						<button id="2_3"  onclick="fun2_3()"class="seatNumber ">3</button>
+						<button id="2_4"  onclick="fun2_4()"class="seatNumber ">4</button>
+
+					</div>
+					<div class="seatRow">
+						<div class="seatRowNumber">
+							Row 3
+						</div>
+						<button id="3_1" onclick="fun3_1()"class="seatNumber ">1</button>
+						<button id="3_2"  onclick="fun3_2()"class="seatNumber ">2</button>
+						<button id="3_3"  onclick="fun3_3()"class="seatNumber ">3</button>
+						<button id="3_4" onclick="fun3_4()"class="seatNumber ">4</button>
+
+					</div>
+					<div class="seatRow">
+						<div class="seatRowNumber">
+							Row 4
+						</div>
+						<button id="4_1" onclick="fun4_1()" class="seatNumber ">1</button>
+						<button id="4_2"onclick="fun4_2()" class="seatNumber ">2</button>
+						<button id="4_3" onclick="fun4_3()" class="seatNumber ">3</button>
+						<button id="4_4"onclick="fun4_4()" class="seatNumber ">4</button>
+
+					</div>
+
+
+			</div>
+
+
+		</div>
+
+
+  		</div>
+	</div>
+
+<script>
+
+
+    function fun1_1() {
+        $("#1_1").toggle(function () {
+            $("#1_1").addClass("seatUnavailable");
+        });
+    }
+    function fun1_2() {
+        $("#1_2").toggle(function () {
+            $("#1_2").addClass("seatUnavailable");
+        });
+    }
+    function fun1_3() {
+        $("#1_3").toggle(function () {
+            $("#1_3").addClass("seatUnavailable");
+        });
+    }
+    function fun1_4() {
+        $("#1_4").toggle(function () {
+            $("#1_4").addClass("seatUnavailable");
+        });
+    }
+    function fun2_1() {
+        $("#2_1").toggle(function () {
+            $("#2_1").addClass("seatUnavailable");
+        });
+    }
+    function fun2_2() {
+        $("#2_2").toggle(function () {
+            $("#2_2").addClass("seatUnavailable");
+        });
+    }
+    function fun2_3() {
+        $("#2_3").toggle(function () {
+            $("#2_3").addClass("seatUnavailable");
+        });
+    }
+    function fun2_4() {
+        $("#2_4").toggle(function () {
+            $("#2_4").addClass("seatUnavailable");
+        });
+    }
+    function fun3_1() {
+        $("#3_1").toggle(function () {
+            $("#3_1").addClass("seatUnavailable");
+        });
+    }
+    function fun3_2() {
+        $("#3_2").toggle(function () {
+            $("#3_2").addClass("seatUnavailable");
+        });
+    }
+    function fun3_3() {
+        $("#3_3").toggle(function () {
+            $("#3_3").addClass("seatUnavailable");
+        });
+    }
+    function fun3_4() {
+        $("#3_4").toggle(function () {
+            $("#3_4").addClass("seatUnavailable");
+        });
+    }
+    function fun4_1() {
+        $("#4_1").toggle(function () {
+            $("#4_1").addClass("seatUnavailable");
+        });
+    }
+    function fun4_2() {
+        $("#4_2").toggle(function () {
+            $("#4_2").addClass("seatUnavailable");
+        });
+    }
+    function fun4_3() {
+        $("#4_3").toggle(function () {
+            $("#4_3").addClass("seatUnavailable");
+        });
+    }
+    function fun4_4() {
+        $("#4_4").toggle(function () {
+            $("#4_4").addClass("seatUnavailable");
+        });
+    }
+
+
+
+
+
+
+
+
+</script>
+
+	</div>
+</div>
+
+
+
+  <footer class="panel-footer" style="margin-left: 90px;margin-right: 90px;">
+	  <center>
+
+		  <div class="center-block">
+			  <h4 style="display: inline;color: #ffffff;">Copyright © 2017 Abed Eid </h4>
+			  <a href="https://www.facebook.com/abed.eid.336"> <img  src="images/facebook.png" alt="facebook" class="social_widget_icon" /></a>
+			  <a href="mailto:abedeidabedhussien@gmail.com"><img  src="images/gmail.ico" alt="gmail" class="social_widget_icon" /></a>
+			  <a href=" https://www.youtube.com/channel/UCJqQQsuxGhs-EHCRYn3tzsA">  <img  src="images/youyube.png" alt="youtube" class="social_widget_icon" /></a>
+			  <a href="https://twitter.com/Abed_Eid_Abed"> <img  src="images/twitter.png" alt="twitter" class="social_widget_icon" /></a>
+			  <a href="https://www.linkedin.com/in/abedeid/"> <img  src="images/linked%20in.png" alt="linkedin" class="social_widget_icon" /></a>
+
+		  </div>
+	  </center>
+  </footer>
+  </div>
+
+
+
+  <script
+		  src="https://code.jquery.com/jquery-1.9.1.js"
+		  integrity="sha256-e9gNBsAcA0DBuRWbm0oZfbiCyhjLrI6bmqAl5o+ZjUA="
+		  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	<script src="app.js"></script>
+	<script src="Ctrs/movieDetailsCtr.js"></script>
+	<script src="Ctrs/movieTailerCtr.js"></script>
+	<script src="Ctrs/movieCtrSearch.js"></script>
+  </body>
+</html>
